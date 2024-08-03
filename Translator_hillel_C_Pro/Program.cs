@@ -11,9 +11,10 @@ class Translator
         //Додаток має надавати переклад стандартних фраз ("Hello" -> "Привіт", "Bye" -> "Прощавай").
         Dictionary<string, string> dictionary_en_ua = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-        dictionary_en_ua.Add("Вітаємо в нашому перекладачі!", "Welcome to our translator!");
-        dictionary_en_ua.Add("Введіть слово, переклад якого ви бажаєте побачити: ", "Enter the word for which you want to see the translation:");
-        dictionary_en_ua.Add("На даний момент можна перекласти такі слова:", "At the moment, the following words can be translated:");
+        dictionary_en_ua.Add("Welcome to our translator!", "Вітаємо в нашому перекладачі!");
+        dictionary_en_ua.Add("At the moment, the following words can be translated:","На даний момент можна перекласти такі слова:" );
+        dictionary_en_ua.Add("Enter the word for which you want to see the translation:","Введіть слово, переклад якого ви бажаєте побачити: ");
+        
 
 
         // form ua to eng 
@@ -33,18 +34,18 @@ class Translator
         while (true)
         {
             
-            Console.WriteLine(dictionary_en_ua["Вітаємо в нашому перекладачі!"]);
-            Console.WriteLine($"{dictionary_en_ua["На даний момент можна перекласти такі слова:"]}  " +
-                $"({dictionary_en_ua["Привіт"]})" +
-                $"({dictionary_en_ua["До побачення"]})" +
-                $"({dictionary_en_ua["Світ"]})" +
-                $"({dictionary_en_ua["Порожній"]})" +
-                $"({dictionary_en_ua["Переклад"]})");
+            Console.WriteLine(dictionary_en_ua["Welcome to our translator!"]);
+            Console.WriteLine($"{dictionary_en_ua["At the moment, the following words can be translated:"]}  " +
+                $"({dictionary_en_ua["Hello"]})" +
+                $"({dictionary_en_ua["Bye"]})" +
+                $"({dictionary_en_ua["World"]})" +
+                $"({dictionary_en_ua["Empty"]})" +
+                $"({dictionary_en_ua["translation"]})");
            
 
-            Console.Write(dictionary_en_ua["Введіть слово, переклад якого ви бажаєте побачити: "]);
-            var query = Console.ReadLine() ?? dictionary_en_ua["Порожній"];
-            Console.Write($"{dictionary_en_ua["Переклад"]}: {query} --> {dictionary_en_ua[query]}\n");
+            Console.Write(dictionary_en_ua["Enter the word for which you want to see the translation:"]);
+            var query = Console.ReadLine() ?? dictionary_en_ua["Empty"];
+            Console.Write($"{dictionary_en_ua["translation"]}: {query} --> {dictionary_en_ua[query]}\n");
             //Console.Write(dictionary_ua_en.Keys);
             Console.Write("Press any kay to continue.."); Console.ReadKey(); Console.Clear(); 
         }
